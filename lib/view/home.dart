@@ -1,4 +1,5 @@
 import 'package:copyd/utli/emoticon_rating.dart';
+import 'package:copyd/widgets/excercise_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:intl/intl.dart';
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
           // backgroundColor: const Color(0xff277ebe),
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          selectedItemColor: Colors.blue[400],
+          selectedItemColor: Colors.blue[500],
           unselectedItemColor: Colors.blue[200],
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
@@ -49,14 +50,14 @@ class HomePage extends StatelessWidget {
                                   TextStyle(fontSize: 24, color: Colors.white),
                             ),
                             const SizedBox(
-                              height: 2.0,
+                              height: 5.0,
                             ),
                             Text(
-                              DateFormat('MMMM - dd - y')
+                              DateFormat('dd MMMM, y')
                                   .format(time), //gives current date/time/year
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 15,
-                                color: Colors.white,
+                                color: Colors.grey.shade200,
                               ),
                             ),
                           ],
@@ -81,6 +82,7 @@ class HomePage extends StatelessWidget {
 
                     Container(
                       //static searchbar design //
+                      height: 50,
                       decoration: BoxDecoration(
                         color: Colors.blue[400],
                         borderRadius: BorderRadius.circular(12),
@@ -176,7 +178,7 @@ class HomePage extends StatelessWidget {
               ),
               Container(
                 width: Get.size.width,
-                height: 329,
+                height: 428,
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
                   borderRadius: const BorderRadius.only(
@@ -186,9 +188,13 @@ class HomePage extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    const Center(
-                      child: Icon(Icons.linear_scale_sharp),
+                    Center(
+                      child: Icon(
+                        Icons.linear_scale_sharp,
+                        color: Colors.grey.shade400,
+                      ),
                     ),
+                    // container title
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Row(
@@ -203,27 +209,58 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
+                    //  container title ends here!
                     Padding(
                       padding: const EdgeInsets.only(left: 25, right: 25),
                       child: Container(
-                        height: 90,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20.0),
-                          ),
-                        ),
-                        child: Center(
-                          child: ListTile(
-                            // leading: ,
-                            title: const Text("Speaking skils"),
-                            subtitle: const Text("16 Excercises"),
-                            leading: const Icon(Icons.favorite),
-                            trailing: IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.more_horiz),
+                        height: 320,
+                        decoration: const BoxDecoration(),
+                        child: ListView(
+                          shrinkWrap: true,
+                          children: [
+                            const ExcercisesListView(
+                              title: 'Speaking skills',
+                              subtTitle: '17 Excercise',
+                              iconColor: Colors.white,
+                              displayIcon: Icon(Icons.favorite),
+                              displayColor: Colors.orange,
                             ),
-                          ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                            const ExcercisesListView(
+                              title: 'Writing skills',
+                              subtTitle: '7 Excercise',
+                              iconColor: Colors.white,
+                              displayIcon: Icon(Icons.person),
+                              displayColor: Colors.blue,
+                            ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                            ExcercisesListView(
+                              title: 'Reading speed',
+                              subtTitle: '6 Excercise',
+                              iconColor: Colors.white,
+                              displayIcon:
+                                  const Icon(Icons.book_online_outlined),
+                              displayColor: Colors.pink.shade400,
+                            ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                            ExcercisesListView(
+                              title: 'Learning speed',
+                              subtTitle: '14 Excercise',
+                              iconColor: Colors.white,
+                              displayIcon:
+                                  const Icon(Icons.directions_run_outlined),
+                              displayColor: Colors.green.shade300,
+                            ),
+                            const SizedBox(
+                              height: 6,
+                            ),
+                          ],
                         ),
                       ),
                     ),
