@@ -26,6 +26,7 @@ class _HomePageState extends State<HomePage> {
           unselectedItemColor: Colors.blue[200],
           currentIndex: selectedIndex,
           onTap: (index) {
+            selectedIndex = index;
             setState(() {});
           },
           items: const [
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
         body: selectedIndex == 0
             ? HomeViewScreen(time: time)
             : selectedIndex == 1
-                ? const DashView()
+                ? DashView(time: time)
                 : selectedIndex == 2
                     ? const ScreenView()
                     : const CameraView(),

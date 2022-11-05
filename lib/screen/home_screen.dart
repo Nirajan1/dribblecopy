@@ -3,6 +3,7 @@ import 'package:copyd/widgets/excercise_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+// import 'package:flutter_emoji/flutter_emoji.dart';// emojis not used till now
 
 class HomeViewScreen extends StatelessWidget {
   const HomeViewScreen({
@@ -163,7 +164,7 @@ class HomeViewScreen extends StatelessWidget {
           ),
           Container(
             width: Get.size.width,
-            height: 428,
+            height: 460,
             decoration: BoxDecoration(
               color: Colors.grey.shade100,
               borderRadius: const BorderRadius.only(
@@ -198,10 +199,10 @@ class HomeViewScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 25, right: 25),
                   child: Container(
-                    height: 320,
+                    height: 350,
                     decoration: const BoxDecoration(),
                     child: ListView(
-                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
                       children: [
                         const ExcercisesListView(
                           title: 'Speaking skills',
