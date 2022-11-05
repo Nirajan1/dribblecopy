@@ -8,10 +8,10 @@ import 'package:intl/intl.dart';
 class HomeViewScreen extends StatelessWidget {
   const HomeViewScreen({
     Key? key,
-    required this.time,
+    // required this.time,
   }) : super(key: key);
 
-  final DateTime time;
+  // final DateTime time;
 
   @override
   Widget build(BuildContext context) {
@@ -30,22 +30,22 @@ class HomeViewScreen extends StatelessWidget {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           'Hello Nirajan!',
                           style: TextStyle(fontSize: 24, color: Colors.white),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: 5.0,
                         ),
-                        Text(
-                          DateFormat('dd MMMM, y')
-                              .format(time), //gives current date/time/year
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.grey.shade200,
-                          ),
-                        ),
+                        // Text(
+                        //   DateFormat('dd MMMM, y')
+                        //       .format(time), //gives current date/time/year
+                        //   style: TextStyle(
+                        //     fontSize: 15,
+                        //     color: Colors.grey.shade200,
+                        //   ),
+                        // ),
                       ],
                     ),
                     Container(

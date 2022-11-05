@@ -1,5 +1,5 @@
 import 'package:copyd/binding/controller_binding.dart';
-import 'package:copyd/view/login.dart';
+import 'package:copyd/view/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: ControllerBinding(),
-      home: const LoginView(),
+      home: const SplashView(),
     );
   }
 }
